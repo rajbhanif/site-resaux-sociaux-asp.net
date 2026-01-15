@@ -47,6 +47,6 @@ Ce projet a permis de relever plusieurs défis intéressants :
 *   **Base de Données** : SQL Server
 *   **Gestion de Version** : Git
 
-## Auteur
+## Autrice
 **Raj Beghum Hanif**
 Projet académique - Développement d'applications Web avec ASP.NET Core.
