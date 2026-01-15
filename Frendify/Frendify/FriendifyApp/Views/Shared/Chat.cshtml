@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+}
+
+<style>
+
+    .container {
+        flex: 1;
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #message {
+        border-radius: 5px 0 0 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+    }
+
+    #sendButton {
+        border-radius: 5px;
+        background-color: palevioletred; /* Green color for the button */
+        color: white;
+        border: none;
+        padding: 10px 20px; /* Added padding for better click area */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transitions */
+        width: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    }
+
+        #sendButton:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        #sendButton:active {
+            background-color: #1e7e34; /* Even darker on active */
+            transform: translateY(0); /* Reset lift effect when clicked */
+        }
+
+        #sendButton:focus {
+            outline: none; /* Remove the default outline */
+        }
+
+
+
+
+
+</style>
+
+
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Messages</h1>
+        <p>Kinda Group Chat</p>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">User</div>
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" placeholder="Enter your Message" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <button id="sendButton" class="btn btn-primary">Send Message</button>
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Page d'accueil";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container mt-5">
+    <!-- Section des notifications -->
+    <div id="notifications" class="alert alert-success" role="alert" style="display: none;"></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="mb-4">Contrôles SignalR</h4>
+
+            <!-- Utilisation d'un conteneur déroulant pour tous les contrôles -->
+            <div class="overflow-auto" style="max-height: 600px;">
+                <div class="form-group">
+                    <label for="broadcast">Message à diffuser</label>
+                    <input type="text" id="broadcast" class="form-control" />
+                    <button id="btn-broadcast" class="btn btn-primary mt-2">Diffuser</button>
+                </div>
+                <div class="form-group">
+                    <label for="others-message">Message aux autres</label>
+                    <input type="text" id="others-message" class="form-control" />
+                    <button id="btn-others-message" class="btn btn-primary mt-2">Envoyer aux autres</button>
+                </div>
+                <div class="form-group">
+                    <label for="self-message">Message à soi-même</label>
+                    <input type="text" id="self-message" class="form-control" />
+                    <button id="btn-self-message" class="btn btn-primary mt-2">Envoyer à soi-même</button>
+                </div>
+                <div class="form-group">
+                    <label for="individual-message">Message à un utilisateur spécifique</label>
+                    <input type="text" id="individual-message" class="form-control" />
+                    <label for="connection-for-message" class="mt-2">ID de connexion</label>
+                    <input type="text" id="connection-for-message" class="form-control" />
+                    <button id="btn-individual-message" class="btn btn-primary mt-2">Envoyer</button>
+                </div>
+                <div class="form-group">
+                    <label for="group-to-create">Nom du groupe à créer</label>
+                    <input type="text" id="group-to-create" class="form-control" />
+                    <button id="btn-group-create" class="btn btn-warning mt-2">Créer un groupe</button>
+                </div>
+                <div class="form-group">
+                    <label for="group-to-add">Nom du groupe à rejoindre</label>
+                    <input type="text" id="group-to-add" class="form-control" />
+                    <button id="btn-group-add" class="btn btn-success mt-2">Rejoindre le groupe</button>
+                </div>
+                <div class="form-group">
+                    <label for="group-message">Message au groupe</label>
+                    <input type="text" id="group-message" class="form-control" />
+                    <label for="group-for-message" class="mt-2">Nom du groupe</label>
+                    <input type="text" id="group-for-message" class="form-control" />
+                    <button id="btn-group-message" class="btn btn-primary mt-2">Envoyer au groupe</button>
+                    <button id="btn-get-group-users" class="btn btn-info mt-2">Voir les utilisateurs du groupe</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="group-to-remove">Nom du groupe à quitter</label>
+                    <input type="text" id="group-to-remove" class="form-control" />
+                    <button id="btn-group-remove" class="btn btn-danger mt-2">Quitter le groupe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h4 class="mb-4">Messages reçus</h4>
+            <div id="signalr-message-panel" class="border rounded p-3" style="height: 400px; overflow-y: scroll; background-color: #f9f9f9;"></div>
+
+            <h4 class="mt-4">Utilisateurs du groupe</h4>
+            <div id="group-users-panel" class="border rounded p-3" style="height: 200px; overflow-y: scroll; background-color: #f9f9f9;"></div>
+        </div>
+    </div>
+</div>
